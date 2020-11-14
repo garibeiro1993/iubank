@@ -18,6 +18,8 @@ services:
     depends_on:
       - db
     container_name: iubank
+    tty: true
+    stdin_open: true
     build: .
     command: bash start.sh
     ports:
