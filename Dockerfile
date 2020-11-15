@@ -14,3 +14,6 @@ COPY Gemfile ./
 ENV BUNDLE_PATH /app-gems
 # Copia nosso código para dentro do container
 COPY . .
+
+COPY ./start.sh /
+RUN chmod +x /start.sh
