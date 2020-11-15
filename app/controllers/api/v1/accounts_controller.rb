@@ -8,7 +8,7 @@ module Api
       def create
         account = Account.new(account_params)
 
-        if account_exists?
+        if Account.exists? account.id
           render json: { errors: 'account id is already in use, please provide a valid id' }, status: :unprocessable_entity
         elsif account.save
           render json: account, status: :created
@@ -29,10 +29,6 @@ module Api
 
       def account_params
         params.permit(:id, :name, :balance, :email, :password, :password_confirmation)
-      end
-
-      def account_exists?
-        Account.find_by(id: params[:id]).present?
       end
     end
   end
