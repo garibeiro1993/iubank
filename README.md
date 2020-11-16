@@ -20,6 +20,8 @@ docker-compose 1.21.2
 
 ## Instalação
 
+### Obs. Caso tenha problemas para executar o docker utilizar o sudo ou dar permissão ao seu usuário no grupo do docker.
+
 1 - Clonar repositório
 
 ```git
